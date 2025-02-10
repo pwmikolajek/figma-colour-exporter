@@ -1,0 +1,9 @@
+{
+    "name": "Figma Colour Exporter",
+    "id": "your-plugin-id",
+    "api": "1.0.0",
+    "editorType": ["figma"],
+    "main": "dist/code.js",
+    "ui": "ui.html"
+  }
+  

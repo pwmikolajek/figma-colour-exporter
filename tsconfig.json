@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "CommonJS",
+      "outDir": "./dist",
+      "strict": true,
+      "lib": ["ES2017"],
+      "types": ["@figma/plugin-typings"],
+      "skipLibCheck": true
+    }
+  }
+  

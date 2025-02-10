@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.onload = () => {
+      document.getElementById("export").onclick = () => {
+        parent.postMessage({ pluginMessage: { type: "export-colours" } }, "*");
+      };
+    };
+
+    window.onmessage = (event) => {
+      if (event.data.pluginMessage.type === "colours") {
+        const colours = event.data.pluginMessage.colours;
+        const json = JSON.stringify(colours, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "figma-colours.json";
+        link.click();
+      }
+    };
+  </script>
+</head>
+<body>
+  <button id="export">Export Colours</button>
+</body>
+</html>
